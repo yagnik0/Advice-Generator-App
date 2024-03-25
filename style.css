@@ -68,8 +68,8 @@ body {
   padding: 2rem;
   background-color: var(--neon);
   position: absolute;
-  left: 45%;
-  bottom: -5%;
+  left: 44%;
+  bottom: -8%;
 }
 
 @keyframes animatemodal {
@@ -85,6 +85,10 @@ body {
 }
 
 @media (max-width: 40em) {
+
+  body {
+    padding: 1rem;
+  }
   .content {
     max-width: 45rem;
     padding: 4.7rem 1.9rem;
@@ -96,6 +100,6 @@ body {
   }
 
   .btn-primary{
-    left: 43%;
+    left: 42%;
   }
 }
