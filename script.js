@@ -4,18 +4,30 @@ const button = document.querySelector(".btn-primary");
 
 // console.log(adviceID,adviceText);
 
-button.addEventListener("click", sendingHTTpRequest);
+button.addEventListener("click", withfetch);
 
-function sendingHTTpRequest(){
-    const xhr = new XMLHttpRequest();
+// Sending with HTTPrequest :-
 
-  xhr.responseType = "json";
 
-  xhr.addEventListener("load", () => {
-    adviceText.innerText = xhr.response.slip.advice;
-    adviceID.innerText = xhr.response.slip.id;
-  });
+// function sendingHTTpRequest(){
+//     const xhr = new XMLHttpRequest();
 
-  xhr.open("GET", "https://api.adviceslip.com/advice");
-  xhr.send();
+//   xhr.responseType = "json";
+
+//   xhr.addEventListener("load", () => {
+//     adviceText.innerText = xhr.response.slip.advice;
+//     adviceID.innerText = xhr.response.slip.id;
+//   });
+
+//   xhr.open("GET", "https://api.adviceslip.com/advice");
+//   xhr.send();
+// }
+
+function withfetch(){
+  fetch("https://api.adviceslip.com/advice")
+  .then((res) => res.json())
+  .then((adviceData) => {
+    return adviceText.innerText = adviceData.slip.advice, 
+    adviceID.innerText = adviceData.slip.id;
+  })
 }
